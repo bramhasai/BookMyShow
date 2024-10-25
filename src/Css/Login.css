@@ -33,3 +33,7 @@
     border: none !important;
     width: 100%;
 }
+
+.link{
+    cursor: pointer;
+}

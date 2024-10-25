@@ -34,8 +34,10 @@ export default function Login(){
                                     Login
                                 </Button>
                             </Form>
-                            <div style={{marginTop:"1rem",display:"flex", alignItems:"center", justifyContent:"center"}}>
-                                <p>New here? Please <a onClick={()=>navigate('/signup')}> signup</a> </p>
+                            <div 
+                                style={{marginTop:"1rem",display:"flex", alignItems:"center", justifyContent:"center"}}
+                            >
+                                <p>New here? Please <a className="link" onClick={()=>navigate('/signup')}> signup</a> </p>
                             </div>
                         </Card.Body>
                     </Card>

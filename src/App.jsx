@@ -9,6 +9,8 @@ import { Route,Routes } from 'react-router-dom';
 
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Home from './components/Home';
+import MovieDetails from './components/MovieDetails';
 
 function App() {
   const navigate = useNavigate();
@@ -16,7 +18,7 @@ function App() {
     <div>
       <Navbar className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand  onClick={()=>navigate('/')}>
+          <Navbar.Brand style={{cursor:"pointer"}} onClick={()=>navigate('/home')}>
             <img
               alt=""
               src={logo}
@@ -30,8 +32,10 @@ function App() {
       </Navbar>
     
       <Routes>
+        <Route path='/home' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/movieDetails/:id' element={<MovieDetails />} />
       </Routes>
     </div>
   )
