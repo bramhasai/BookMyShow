@@ -1,0 +1,35 @@
+.login_image img{
+    height: 30rem;
+    width: 30rem;
+}
+
+.login_image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row{
+    margin: 0rem;
+    background-color: #f54236;
+    height: 88vh;
+}
+
+.login_form_col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.login_card{
+    width: 70%;
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+}
+
+.login_button{
+    background-color: #f54236 !important;
+    border: none !important;
+    width: 100%;
+}
