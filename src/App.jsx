@@ -11,7 +11,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Home from './components/Home';
 import MovieDetails from './components/MovieDetails';
-
+import SeatSelection from './components/SeatSelection';
 function App() {
   const navigate = useNavigate();
   return (
@@ -36,6 +36,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/movieDetails/:id' element={<MovieDetails />} />
+        <Route path='/:id/selectseat' element={<SeatSelection />}/>
       </Routes>
     </div>
   )

@@ -2,16 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Row,Col } from "react-bootstrap";
 import {Button} from "react-bootstrap";
 import '../Css/MovieDetails.css'
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 const IMAGE_URL='https://image.tmdb.org/t/p/w500/';
 const TIMINGS=["10:00 AM", '02:30 PM', '06:30 PM', '10:00 PM'];
 
 export default function MovieDetails(){
     const location = useLocation();
-    const {title,overview,poster_path}=location.state;
+    const {id,title,overview,poster_path}=location.state;
     const [latlong, setlatlong] = useState({})
     const [theatres,setTheatres]=useState([]);
+    const navigate = useNavigate()
     useEffect(()=>{
         if('geolocation' in navigator){
             navigator.geolocation.getCurrentPosition((position)=>{
@@ -59,7 +60,9 @@ export default function MovieDetails(){
                                 <div className="show_timings">
                                     {TIMINGS.map((time,index)=>{
                                     return(        
-                                        <Button className="showtime_button" key={index}>{time}</Button>
+                                        <Button onClick={()=>{
+                                            navigate(`/${id}/selectseat`,{state:{title:title}})
+                                        }} className="showtime_button" key={index}>{time}</Button>
                                     )
                                     })}
                                 </div>
