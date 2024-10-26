@@ -9,9 +9,9 @@
     justify-content: center;
 }
 
-.row{
+.login_form_row{
     margin: 0rem;
-    background-color: #f54236;
+    background-color: #f54236 !important;
     height: 88vh;
 }
 

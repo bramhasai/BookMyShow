@@ -17,8 +17,8 @@ export default function Home(){
         })
     },[])
 
-    const handleClick = (movieID)=>{
-        navigate('/movieDetails/'+movieID);
+    const handleClick = (movie)=>{
+        navigate('/movieDetails/'+movie.id, {state:movie});
     }
 
     return(
@@ -27,7 +27,7 @@ export default function Home(){
                 console.log(movie);
                 console.log(IMAGE_URL+movie.poster_path);
                 return(
-                    <Card onClick={()=>handleClick(movie.id)} className="movie-card" key={movie.id}>
+                    <Card onClick={()=>handleClick(movie)} className="movie-card" key={movie.id}>
                         <Card.Img variant="top" className="movie_img" src={IMAGE_URL+movie.poster_path} />
                         <Card.Title style={{fontWeight:"700", fontSize:"1rem"}}>{movie.title}</Card.Title>
                     </Card>

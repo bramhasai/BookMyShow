@@ -12,7 +12,7 @@ export default function Login(){
     const [password,setPassword]=useState("");
     return(
         <div>
-            <Row>
+            <Row className="login_form_row">
                 <Col className="login_image">
                     <img src={login} alt="" />
                 </Col>
