@@ -6,10 +6,14 @@ import { Card } from "react-bootstrap";
 import {Form,Button} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-export default function Login(){
+export default function Login({setUser}){
     const navigate =useNavigate();
     const [email,setEmail]=useState("");
-    const [password,setPassword]=useState("");
+    const handleLogin=()=>{
+        localStorage.setItem('userEmail',email);
+        setUser(email);
+        navigate('/');
+    }
     return(
         <div>
             <Row className="login_form_row">
@@ -30,7 +34,7 @@ export default function Login(){
                                     <Form.Control type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
                                 </Form.Group>
 
-                                <Button className="login_button" variant="primary" type="submit">
+                                <Button onClick={handleLogin} className="login_button" variant="primary" type="submit">
                                     Login
                                 </Button>
                             </Form>

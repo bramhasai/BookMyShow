@@ -12,3 +12,8 @@
 .navbar-brand h4{
     margin-bottom: 0rem !important;
 }
+
+.logout-button{
+    background-color: #f54236 !important;
+    border: none !important;
+}

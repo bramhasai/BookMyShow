@@ -5,12 +5,13 @@ import '../Css/Login.css'
 import { Card } from "react-bootstrap";
 import {Form,Button} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-export default function Signup(){
+export default function Signup({setUser}){
     const navigate=useNavigate();
     const [email,setEmail]=useState("");
 
     const handleSubmit=()=>{
         localStorage.setItem('userEmail',email);
+        setUser(email);
         navigate('/');
     }
     return(
@@ -39,7 +40,7 @@ export default function Signup(){
                                 </Form.Group>
 
                                 <Button onClick={handleSubmit} className="login_button" variant="primary" type="submit">
-                                    Sign up
+                                    Signup
                                 </Button>
                             </Form>
                             <div style={{marginTop:"1rem",display:"flex", alignItems:"center", justifyContent:"center"}}>

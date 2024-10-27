@@ -61,7 +61,7 @@ export default function MovieDetails(){
                                     {TIMINGS.map((time,index)=>{
                                     return(        
                                         <Button onClick={()=>{
-                                            navigate(`/${id}/selectseat`,{state:{title:title}})
+                                            navigate(`/${id}/selectseat`,{state:{title:title,theatre:theatre}})
                                         }} className="showtime_button" key={index}>{time}</Button>
                                     )
                                     })}

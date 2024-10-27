@@ -21,11 +21,18 @@ export default function Home(){
         navigate('/movieDetails/'+movie.id, {state:movie});
     }
 
+    useEffect(()=>{
+        const user=localStorage.getItem('userEmail');
+        if(!user){
+            navigate('/login')
+        }
+    })
+
     return(
         <div className="movies_div">
             {movies.map((movie)=>{
-                console.log(movie);
-                console.log(IMAGE_URL+movie.poster_path);
+                // console.log(movie);
+                // console.log(IMAGE_URL+movie.poster_path);
                 return(
                     <Card onClick={()=>handleClick(movie)} className="movie-card" key={movie.id}>
                         <Card.Img variant="top" className="movie_img" src={IMAGE_URL+movie.poster_path} />
